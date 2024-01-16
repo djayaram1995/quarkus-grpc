@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "dev.dj";
+option java_outer_classname = "CalculatorProto";
+
+package calculator;
+
+service Calculator {
+    rpc add (Input) returns (Output) {}
+    rpc subtract (Input) returns (Output) {}
+    rpc divide (Input) returns (Output) {}
+    rpc multiply (Input) returns (Output) {}
+}
+
+message Input {
+    int32 num1 = 1;
+    int32 num2 = 2;
+}
+
+message Output {
+    double result = 1;
+}
